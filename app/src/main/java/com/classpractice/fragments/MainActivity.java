@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentContainer;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.classpractice.fragments.fragment.AreaOfCircle;
 import com.classpractice.fragments.fragment.FirstFragment;
@@ -38,7 +41,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        FragmentManager fragmentManager=getSupportFragmentManager();
+        startActivity(new Intent(getApplicationContext(), ViewPagerActivity.class));
+        Toast.makeText(getApplicationContext(), "You click on yes", Toast.LENGTH_SHORT).show();
+     /*   FragmentManager fragmentManager=getSupportFragmentManager();
         FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
 
         if (status){
@@ -60,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             status=false;
 
 
-        }
+        }*/
     }
 
     @Override
